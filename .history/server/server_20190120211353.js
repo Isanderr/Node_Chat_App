@@ -15,15 +15,15 @@ io.on('connection', (socket) =>
 {
     console.log('New user connected');
 
-    socket.emit('newMessage', {
-        from: 'John',
-        text: 'See you then',
-        createdAt: 123123
+    socket.emit('newEmail', {
+        from: 'isander@wp.pl',
+        text: 'Hey. What is going on.',
+        createAt: 123
     });
 
-    socket.on('createMessage', (message) =>
+    socket.on('createEmail', (newEmail) =>
     {
-        console.log('createMessage', message);
+        console.log('createEmail', newEmail);
     });
 
     socket.on('disconnect', () =>

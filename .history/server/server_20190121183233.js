@@ -18,6 +18,7 @@ io.on('connection', (socket) =>
 
     socket.emit('newMessage', generateMessage('Admin', 'Welcome to the chat app'));
 
+
     socket.broadcast.emit('newMessage', generateMessage('Admin', 'New user joined'));
 
     socket.on('createMessage', (message) =>
@@ -35,10 +36,12 @@ io.on('connection', (socket) =>
     {
         console.log('User was disconnected');
     });
-});
 
-server.listen(port, () =>
-{
-    console.log(`Server is up on ${ port }`);
-});
 
+
+
+    server.listen(port, () =>
+    {
+        console.log(`Server is up on ${ port }`);
+    });
+});

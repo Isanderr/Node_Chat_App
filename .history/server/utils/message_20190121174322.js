@@ -1,0 +1,4 @@
+var generateMessage = (from, text) =>
+{
+
+};

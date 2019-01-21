@@ -35,10 +35,10 @@ io.on('connection', (socket) =>
     {
         console.log('User was disconnected');
     });
-});
 
-server.listen(port, () =>
-{
-    console.log(`Server is up on ${ port }`);
-});
 
+    server.listen(port, () =>
+    {
+        console.log(`Server is up on ${ port }`);
+    });
+});

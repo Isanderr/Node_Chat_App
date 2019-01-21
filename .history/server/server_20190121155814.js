@@ -15,7 +15,6 @@ io.on('connection', (socket) =>
 {
     console.log('New user connected');
 
-
     socket.on('createMessage', (message) =>
     {
         console.log('createMessage', message);

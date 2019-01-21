@@ -20,7 +20,7 @@ socket.on('newMessage', function (message)
 socket.emit('createMessage', {
     from: 'Alex',
     text: 'Hi'
-}, function (data)
+}, function ()
     {
-        console.log('Got it', data);
+        console.log('Got it');
     });

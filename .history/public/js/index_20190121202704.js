@@ -21,6 +21,14 @@ socket.on('newMessage', function (message)
 });
 
 
+socket.emit('createMessage', {
+    from: 'Alex',
+    text: 'Hi'
+}, function (data)
+    {
+        console.log('Got it', data);
+    });
+
 
 jQuery('#message-form').on('submit', function (e)
 {

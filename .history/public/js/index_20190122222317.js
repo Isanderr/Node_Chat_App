@@ -60,7 +60,7 @@ locationButton.on('click', function ()
 
     navigator.geolocation.getCurrentPosition(function (position)
     {
-        locationButton.removeAttr('disabled').text('Send location');
+        locationButton.removeAttr('disabled');
         socket.emit('createLocationMessage', {
             latitude: position.coords.latitude,
             longitude: position.coords.longitude
@@ -68,7 +68,7 @@ locationButton.on('click', function ()
 
     }, function ()
         {
-            locationButton.removeAttr('disabled').text('Send location');
+            locationButton.removeAttr('disabled');
             alert('Unable to fetch location.');
 
         });

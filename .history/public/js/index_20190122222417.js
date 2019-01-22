@@ -68,7 +68,7 @@ locationButton.on('click', function ()
 
     }, function ()
         {
-            locationButton.removeAttr('disabled').text('Send location');
+            locationButton.removeAttr('disabled');
             alert('Unable to fetch location.');
 
         });

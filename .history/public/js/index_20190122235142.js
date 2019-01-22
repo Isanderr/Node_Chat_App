@@ -16,9 +16,7 @@ socket.on('newMessage', function (message)
     var formattedTime = moment(message.createdAT).format('HH:mm');
     var template = jQuery('#message-template').html();
     var html = Mustache.render(template, {
-        text: message.text,
-        from: message.from,
-        createdAT: formattedTime
+        text: message.text
     });
 
     jQuery('#messages').append(html);
@@ -33,15 +31,13 @@ socket.on('newMessage', function (message)
 socket.on('newLocationMessage', function (message)
 {
     var formattedTime = moment(message.createdAT).format('HH:mm');
-    var template = jQuery('#location-message-template').html();
-    var html = Mustache.render(template, {
-        from: message.from,
-        url: message.url,
-        createdAT: formattedTime
-    });
+    var li = jQuery('<li></li>');
+    var a = jQuery('<a target="_blank">My current location</a>');
 
-    jQuery('#messages').append(html);
-
+    li.text(`${ message.from } ${ formattedTime }: `);
+    a.attr('href', message.url);
+    li.append(a);
+    jQuery('#messages').append(li);
 });
 
 jQuery('#message-form').on('submit', function (e)

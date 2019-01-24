@@ -27,8 +27,6 @@ io.on('connection', (socket) =>
         {
             callback('Name and room name are required.')
         }
-
-        callback();
     });
 
     socket.on('createMessage', (message, callback) =>

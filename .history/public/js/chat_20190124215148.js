@@ -31,7 +31,7 @@ socket.on('connect', function ()
             window.location.href = '/';
         } else
         {
-            console.log('No error');
+
         }
 
     });

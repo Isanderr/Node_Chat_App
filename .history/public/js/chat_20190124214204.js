@@ -25,16 +25,8 @@ socket.on('connect', function ()
 
     socket.emit('join', params, function (err)
     {
-        if (err)
-        {
-            alert(err);
-            window.location.href = '/';
-        } else
-        {
-            console.log('No error');
-        }
 
-    });
+    })
 
 });
 socket.on('disconnect', function ()

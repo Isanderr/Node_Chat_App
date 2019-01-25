@@ -84,6 +84,6 @@ describe('Users', () =>
 
     it('should display all the rooms', () =>
     {
-        expect(users.getRooms()).toEqual([ 'Node Chat', 'Node Chat2' ]);
+        expect(users.getRooms()).toEqual([ 'A', 'B' ]);
     });
 });
